@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 wow animated fadeInUp align-center" data-wow-duration="1s" data-wow-delay="1s">
-        <h1 class="arrow">EVENTS : </h1><hr>
-        <p>Those are our events</p>
+        <h1 class="arrow">ÉVÉNEMENTS : </h1><hr>
+        <p>Voici nos événements disponibles</p>
       </div>
     </div>
 
     <div class="row" *ngIf=" role == 'ROLE_MODERATOR' || role == 'ROLE_ADMIN'  ">
-      <button type="submit" (click)="open_add_()" class="btn btn-success">add Event</button>
+      <button type="submit" (click)="open_add_()" class="btn btn-success">Ajouter un événement</button>
 
       <div *ngIf="open_add == true">
   <app-form-add-event (notifacation) ="pushEvent($event)"> ></app-form-add-event>

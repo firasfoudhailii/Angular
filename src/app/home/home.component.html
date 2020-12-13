@@ -41,24 +41,24 @@
                 <div class="icon">
                   {{nombre_events}}
                 </div>
-                <h2>Events </h2>
-                <p>You can participate in those events.</p>
+                <h2> <br>ÉVÉNEMENTS </h2>
+                <p> Disponible pour que vous les rejoigniez!</p>
               </div>
 
               <div class="col-md-4 wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.7s">
                 <div class="icon">
-                  6
+                  4
                 </div>
-                <h2>Categories</h2>
-                <p>thoese arez nombre of categories of events</p>
+                <h2><br>Categories</h2>
+                <p>Choisissez votre propre catégorie</p>
               </div>
 
               <div class="col-md-4 wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.9s">
                 <div class="icon">
-
++500
                 </div>
-                <h2>Nombre Des utilisateur </h2>
-                <p>Nombre des utilisateurs de notre applications .</p>
+                <h2><br>Story </h2>
+                <p>Créez vos Stories dans votre événement et partagez-les avec nous !</p>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -78,7 +78,7 @@
           <div class="form-group">
 
 
-            <input type="text" class="form-control email-add"  [(ngModel)]="name_event"  placeholder="Enter Name event">
+            <input type="text" class="form-control email-add" style="color: azure;" [(ngModel)]="name_event"  placeholder="Entrez le nom de l'événement">
 
 
           </div>
@@ -90,9 +90,13 @@
       <div id="tabs-ui" class="tabs">
         <nav>
           <ul>
-            <li><a (click)="change_type_categorie('ALL')" ><span>ALL</span></a></li>
-            <li><a (click)="change_type_categorie('ART')" ><span>ART</span></a></li>
-            <li><a (click)="change_type_categorie('Festival')" ><span>Festival</span></a></li>
+      
+            <li><a (click)="change_type_categorie('ALL')" ><span>TOUS</span></a></li>
+            <li><a (click)="change_type_categorie('CONCERT')" ><span>CONCERT</span></a></li>
+            <li><a (click)="change_type_categorie('TECHNOLOGIE')" ><span>TECHNOLOGIE</span></a></li>
+            <li><a (click)="change_type_categorie('SPORT')" ><span>SPORT</span></a></li>
+            <li><a (click)="change_type_categorie('GAMING')" ><span>GAMING</span></a></li>
+
 
           </ul>
         </nav>
@@ -101,5 +105,5 @@
     </div>
   </section>
 
-  <app-list-event [name_event]="name_event" [active_pipe]="active_pipe" [type_category]="type_category"></app-list-event>
+  <app-list-event [name_event]="name_event" (notif) ="change_nombre($event)" [active_pipe]="active_pipe" [type_category]="type_category"></app-list-event>
 </div>

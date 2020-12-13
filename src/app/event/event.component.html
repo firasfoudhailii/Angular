@@ -10,10 +10,11 @@
     </div>
     <h2>{{event.titre}}</h2>
     <p> Appartir de {{event.date_Debut | date}} jusqu'à {{event.date_Fin | date}}</p>
-   <p style="color: green" *ngIf=" role =='ROLE_MODERATOR'   || role =='ROLE_ADMIN' ">l event contient {{event.users.length}}</p>
-    <p style="color: red" *ngIf="event.isValide == false  && role =='ROLE_ADMIN' ">l event n est pas encore  valide</p>
-    <a  mat-dialog-actions  (click)="openDialog()" class="learn-more-btn btn-effect wow animated fadeIn" data-wow-duration="0.5s"    data-wow-delay="1.5s" ><i class="fa fa-search"></i><br>View More</a>
-
+   <p style="color: green" *ngIf=" role =='ROLE_MODERATOR'   || role =='ROLE_ADMIN' ">l'événement contient {{event.users.length}} Participant</p>
+    <p style="color: red" *ngIf="event.isValide == false  && role =='ROLE_ADMIN' ">l'événement n'est pas encore  validé</p>
+    <a  mat-dialog-actions  (click)="openDialog()" class="learn-more-btn btn-effect wow animated fadeIn" data-wow-duration="0.5s"    data-wow-delay="1.5s" ><i class="fa fa-search"></i><br>Voir plus</a>
+   <a [routerLink]="[ 'comments', event.id ]" class="learn-more-btn btn-effect wow animated fadeIn" data-wow-duration="0.5s"    data-wow-delay="1.5s" >Commentaires</a>
+   <a [routerLink]="[ 'storie', event.id ]" class="learn-more-btn btn-effect wow animated fadeIn" data-wow-duration="0.5s"    data-wow-delay="1.5s" >les Story de l'événement</a>
     <br>
   </div>
 
